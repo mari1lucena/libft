@@ -6,7 +6,7 @@
 /*   By: mlucena- <mlucena-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 14:22:09 by mlucena-          #+#    #+#             */
-/*   Updated: 2025/04/18 16:07:16 by mlucena-         ###   ########.fr       */
+/*   Updated: 2025/04/18 16:32:54 by mlucena-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static char	**little_split(char const *s, char c, char **split)
 
 	i = 0;
 	j = 0;
-	while (s[i])  ....MARI.LINS
+	while (s[i])
 	{
 		while (s[i] && s[i] == c)
 			i++;
