@@ -6,7 +6,7 @@
 /*   By: mlucena- <mlucena-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 13:34:10 by mlucena-          #+#    #+#             */
-/*   Updated: 2025/04/15 18:30:48 by mlucena-         ###   ########.fr       */
+/*   Updated: 2025/04/17 13:13:16 by mlucena-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,3 +23,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ft_bzero(str, (nmemb * size));
 	return (str);
 }
+
+// int	main()
+// {
+	
+// }
