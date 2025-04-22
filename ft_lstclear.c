@@ -6,7 +6,7 @@
 /*   By: mlucena- <mlucena-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 19:21:39 by mlucena-          #+#    #+#             */
-/*   Updated: 2025/04/22 14:46:48 by mlucena-         ###   ########.fr       */
+/*   Updated: 2025/04/22 15:44:17 by mlucena-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	t_list	*x;
 	t_list	*m;
 
-	x = *lst;
 	if (!lst || !del)
 		return ;
+	x = *lst;
 	while (x)
 	{
 		m = x;
