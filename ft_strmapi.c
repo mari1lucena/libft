@@ -6,7 +6,7 @@
 /*   By: mlucena- <mlucena-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 15:30:25 by mlucena-          #+#    #+#             */
-/*   Updated: 2025/04/17 18:16:24 by mlucena-         ###   ########.fr       */
+/*   Updated: 2025/04/22 14:48:48 by mlucena-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*str;
 	size_t			len;
 
-	if(!s)
+	if (!s || !f)
 		return (NULL);
 	len = ft_strlen(s);
 	str = (char *)malloc((len + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
 	i = 0;
-	while(s[i])
+	while (s[i])
 	{
 		str[i] = f(i, s[i]);
 		i++;
@@ -37,10 +37,10 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 // char shift_char(unsigned int index, char c)
 // {
 // 	if (c >= 'a' && c <= 'z')
-// 		return 'a' + (c - 'a' + index) % 26;
+// 		return ('a' + (c - 'a' + index) % 26);
 // 	if (c >= 'A' && c <= 'Z')
-// 		return 'A' + (c - 'A' + index) % 26;
-// 	return c;
+// 		return ('A' + (c - 'A' + index) % 26);
+// 	return (c);
 // }
 
 // int main(void)
@@ -58,5 +58,5 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 // 	{
 // 		printf("Erro ao alocar memória.\n");
 // 	}
-// 	return 0;
+// 	return (0);
 // }

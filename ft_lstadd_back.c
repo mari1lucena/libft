@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlucena- <mlucena-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/15 13:34:10 by mlucena-          #+#    #+#             */
-/*   Updated: 2025/04/17 13:13:16 by mlucena-         ###   ########.fr       */
+/*   Created: 2025/04/18 19:02:10 by mlucena-          #+#    #+#             */
+/*   Updated: 2025/04/22 14:45:59 by mlucena-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// aloca espaço colocando 0
-void	*ft_calloc(size_t nmemb, size_t size)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	void	*str;
+	t_list	*x;
 
-	str = (void *)malloc(nmemb * size);
-	if (!str)
-		return (NULL);
-	ft_bzero(str, (nmemb * size));
-	return (str);
+	if (!lst || !new)
+		return ;
+	if (!*lst)
+	{
+		*lst = new;
+		return ;
+	}
+	x = ft_lstlast(*lst);
+	x -> next = new;
 }
-
-// int	main()
-// {
-	
-// }

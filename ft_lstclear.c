@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: figomes <figomes@student.42lisboa.com>     +#+  +:+       +#+        */
+/*   By: mlucena- <mlucena-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/07 16:15:58 by figomes           #+#    #+#             */
-/*   Updated: 2025/04/07 16:16:00 by figomes          ###   ########.fr       */
+/*   Created: 2025/04/18 19:21:39 by mlucena-          #+#    #+#             */
+/*   Updated: 2025/04/22 14:46:48 by mlucena-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	unsigned int	i;
+	t_list	*x;
+	t_list	*m;
 
-	i = 0;
-	while (s[i] != '\0')
+	x = *lst;
+	if (!lst || !del)
+		return ;
+	while (x)
 	{
-		ft_putchar_fd(s[i], fd);
-		i++;
+		m = x;
+		x = x->next;
+		del(m->content);
+		free(m);
 	}
+	*lst = NULL;
 }

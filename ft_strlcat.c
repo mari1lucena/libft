@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlcat.c                                          :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlucena- <mlucena-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 13:34:21 by mlucena-          #+#    #+#             */
-/*   Updated: 2025/04/15 13:34:22 by mlucena-         ###   ########.fr       */
+/*   Updated: 2025/04/22 14:47:57 by mlucena-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	i;
 
 	srclen = ft_strlen(src);
+	if (size == 0)
+		return (srclen);
 	dstlen = 0;
 	while (dst[dstlen] && dstlen < size)
 		dstlen++;

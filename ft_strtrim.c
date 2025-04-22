@@ -3,36 +3,42 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: figomes <figomes@student.42lisboa.com>     +#+  +:+       +#+        */
+/*   By: mlucena- <mlucena-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/07 16:11:46 by figomes           #+#    #+#             */
-/*   Updated: 2025/04/07 16:11:48 by figomes          ###   ########.fr       */
+/*   Created: 2025/04/15 14:21:50 by mlucena-          #+#    #+#             */
+/*   Updated: 2025/04/22 14:48:32 by mlucena-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// apaga 'set' de 's1'
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	start;
 	size_t	len;
-	char	*var;
+	char	*str;
 
-	start = 0;
-	len = ft_strlen(s1);
 	if (!s1 || !set)
 		return (NULL);
-	while (s1[start] != '\0' && ft_strchr(set, s1[start]))
+	start = 0;
+	len = ft_strlen(s1);
+	while (s1[start] && ft_strchr(set, s1[start]))
 		start++;
 	while (ft_strrchr(set, s1[len]))
 		len--;
-	var = ft_substr(s1, start, len - start + 1);
-	return (var);
+	str = ft_substr(s1, start, len - start + 1);
+	return (str);
 }
 
-/*int	main(void)
-{
-	char str[] = ",.;42.School.,;";
-	printf("%s\n", ft_strtrim(str, ",.;"));
-	return (0);
-}*/
+// int main()
+// {
+// 	printf("%s\n", ft_strtrim(" Hel lo! ", " "));
+// 	printf("%s\n", ft_strtrim(" Hello! ", " "));
+// 	printf("%s\n", ft_strtrim(" Hello!", " "));
+// 	printf("%s\n", ft_strtrim("Hello! ", " "));
+// 	printf("%s\n", ft_strtrim("Hello!", " "));
+// 	printf("%s\n", ft_strtrim("", ""));
+// 	printf("%s\n", ft_strtrim(" Hello! ", ""));
+// 	printf("%s\n", ft_strtrim("", " "));
+// }
